@@ -4,56 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maps</title>
-
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <object
-      data="world.svg"
-      type="image/svg+xml"
-      id="worldsvg"
-      width="auto"
-      height="auto"
-    ></object>
+    <div class="commands">
+      <input
+        type="text"
+        name="inputCountryName"
+        id="inputCountryName"
+        class="inputField"
+      />
+    </div>
 
-    <script>
-      var a = document.getElementById("worldsvg");
+    <div class="wrapper">
+      <object
+        data="world.svg"
+        type="image/svg+xml"
+        id="worldsvg"
+        class="map"
+      ></object>
+    </div>
 
-      // It's important to add an load event listener to the object,
-      // as it will load the svg doc asynchronously
-      a.addEventListener(
-        "load",
-        function () {
-          // get the inner DOM of the svg file
-          var svgDoc = a.contentDocument;
-          // get all elements
-          let all = svgDoc.getElementsByTagName("path");
-          for(let i = 0; i < all.length; i++) {
-              let currentElement = all[i];
-              currentElement.setAttribute("fill", "black");
-                currentElement.addEventListener(
-              "click",
-              function () {
-                if(currentElement.getAttribute("fill") === "black") {
-                    currentElement.setAttribute("fill", "red");
-                } else {
-                    currentElement.setAttribute("fill", "black");
-                }
-              },
-              false
-            );
-          }
-
-          // get the inner element by id
-          // var delta = svgDoc.getElementById("IT");
-          // add behaviour
-          // console.log(delta)
-          // delta.addEventListener("click",function(){
-          //         alert('hello world!')
-          // }, false);
-        },
-        false
-      );
-    </script>
+    <script src="game.js"></script>
   </body>
 </html>

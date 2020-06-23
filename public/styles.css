@@ -1,13 +1,27 @@
 body{
-    background-color: aqua;
     text-align: center;
+    margin: 0;
 
 }
 
-
-.red {
-    fill: red;
-    color: red;
-    background-color: red;;
-    background-image: red;
+.commands {
+    
+    background-color: black;
+    margin-bottom: 20px;
 }
+
+.inputField {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 10px
+
+}
+
+.inputField:focus {
+    border: 2px solid #8dc6ff;
+    outline: none;
+  }
